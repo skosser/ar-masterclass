@@ -53,6 +53,12 @@
   <h1>🚀 Оживи 3D-мир!</h1>
   <p>Изучи объект, измени размер
      и перенеси его в реальность.</p>
+	 
+  <div class="controls">
+    <button onclick="changeModel('robot')">🤖 Робот</button>
+    <button onclick="changeModel('house')">🏠 Дом</button>
+    <button onclick="changeModel('character')">👾 Персонаж</button>
+  </div>
 
   <model-viewer
     id="viewer"
@@ -91,6 +97,10 @@
     const viewer = document.getElementById("viewer");
     const slider = document.getElementById("scale");
     const label = document.getElementById("sizeText");
+	
+	function changeModel(name) {
+      viewer.src = `models/${name}.glb`;
+	}
 
     slider.addEventListener("input", () => {
       const value = Number(slider.value);
