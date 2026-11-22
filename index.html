@@ -98,16 +98,16 @@
     const slider = document.getElementById("scale");
     const label = document.getElementById("sizeText");
 	
-	function changeModel(name) {
-      viewer.src = `models/${name}.glb`;
-	}
-
     slider.addEventListener("input", () => {
       const value = Number(slider.value);
       viewer.scale = `${value} ${value} ${value}`;
       label.textContent =
         `Масштаб: ${Math.round(value * 100)}%`;
     });
+	
+	function changeModel(name) {
+      viewer.src = `models/${name}.glb`;
+	}
   </script>
 
 </body>
